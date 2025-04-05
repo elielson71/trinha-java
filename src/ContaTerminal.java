@@ -10,9 +10,12 @@ public class ContaTerminal {
         int numero = Integer.parseInt(result.get(2));
         double saldo = Double.parseDouble(result.get(3));
 
-        if(validar(agencia, numero, saldo)){
-            retorno(cliente, agencia, numero, saldo);
+        if(!validar(agencia, numero, saldo)){
+            System.out.println("Dados inválidos, tente novamente!");
+            return;
+
         }
+        retorno(cliente, agencia, numero, saldo);
 
 
     }
